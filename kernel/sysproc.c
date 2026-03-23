@@ -107,3 +107,44 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+uint64
+sys_hello(void){
+  printf("Hi, Shrawan.\n");
+  return 0;
+}
+
+uint64
+sys_getppid(void)
+{
+    struct proc *p = myproc();  // pointer to the current process
+    if(p->parent)
+        return p->parent->pid;  // return parent PID
+    else
+        return 0;               // for init or null parent
+}
+
+uint64
+sys_setlimit(void){
+  int limit;
+
+  argint(0, &limit);
+
+  if(limit<0)
+    return -1;
+
+  struct proc *p = myproc();
+  acquire(&p->lock);
+  p->memlimit= limit;
+  release(&p->lock);
+  return 0;
+}
+
+uint64
+sys_getlimit(void){
+  struct proc *p= myproc();
+  acquire(&p->lock);
+  int limit= p->memlimit;
+  release(&p->lock);
+  return limit;
+}

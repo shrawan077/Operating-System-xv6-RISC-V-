@@ -241,6 +241,11 @@ growproc(int n)
 
   sz = p->sz;
   if(n > 0){
+    
+    //Enforcement of memory limit
+    if(p->memlimit != 0 && (sz+n) > p->memlimit){
+      return -1;  //refuse to grow
+    }
     if(sz + n > TRAPFRAME) {
       return -1;
     }
