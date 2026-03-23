@@ -8,7 +8,6 @@ This project extends the xv6 RISC-V operating system with custom system calls.
 | Syscall | Number | Description |
 |---|---|---|
 | `getppid()` | 22 | Returns the parent process ID |
-| `getreadcount()` | 23 | Returns total number of read() calls since boot |
 | `setlimit(n)` | 24 | Sets a memory limit (in bytes) for the current process |
 | `getlimit()` | 25 | Returns the current memory limit of the process |
 
