@@ -1,5 +1,4 @@
 # xv6-riscv Custom System Calls
-**IOE Tribhuvan University — 6th Semester OS Case Study**
 
 This project extends the xv6 RISC-V operating system with custom system calls.
 
