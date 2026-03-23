@@ -109,12 +109,6 @@ sys_uptime(void)
 }
 
 uint64
-sys_hello(void){
-  printf("Hi, Shrawan.\n");
-  return 0;
-}
-
-uint64
 sys_getppid(void)
 {
     struct proc *p = myproc();  // pointer to the current process

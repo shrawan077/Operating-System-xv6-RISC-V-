@@ -42,7 +42,6 @@ entry("getpid");
 entry("sbrk");
 entry("pause");
 entry("uptime");
-entry("hello");
 entry("getppid");
 entry("setlimit");
 entry("getlimit");
